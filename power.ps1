@@ -6,7 +6,7 @@ $receiver_email = "email1@qq.com, email2@buaa.edu.cn" # 收件人邮箱，支持
 $sender_email = "xxxxxx" # 用于发送通知消息的邮箱，自己选择
 $password = "xxxxxxxxxxxxxxx" # 是邮箱stmp的授权码，不是自己设置的登录密码，不清楚的请百度
 $smtp_server = "smtp.xx.com" # smtp服务器
-$smtp_port = 587 # stmp端口，默认使用587端口
+$smtp_port = 587 # stmp端口，默认使用587端口，163邮箱需要把端口改为465
 $threshold = 100 # 发送邮件的阈值，根据自己宿舍电量使用情况设置
 #-----------------------------------------------------------------------------------------------------------------------------
 
