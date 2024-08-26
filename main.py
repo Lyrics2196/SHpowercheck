@@ -27,8 +27,8 @@ balance = int(provalue[:-3])
 message = MIMEMultipart()
 message["From"] = sender_email
 message["To"] = ", ".join(receiver_email)
-message["Subject"] = "Warning"
-body = f"The available power is insufficient. Remaining power: {balance} kWh"
+message["Subject"] = "宿舍电量警告"
+body = f"宿舍可用电费不足，请及时充值。电量余额: {balance} kWh"
 message.attach(MIMEText(body, "plain"))
 
 smtp = smtplib.SMTP(smtp_server, smtp_port)
