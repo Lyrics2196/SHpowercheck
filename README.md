@@ -12,14 +12,14 @@
 下载源代码中的powershell脚本或python脚本文件，将文件放在你喜欢的地方。
 
 使用文编编辑器打开再在好的脚本，修改根据自己的情况修改配置。
-- $url：默认为西区中湾物业的接口，新北区的接口请查看[这里](https://github.com/moonmagian/BUAA-NewNorthAPI)。
-- $student_id：你的学号。
-- $receive_email：接受通知的邮箱，支持多个邮箱，邮箱之间用逗号分隔。
-- $sender_email：发送邮件的邮箱。
-- $password：smtp服务的授权码，不是登录邮箱时的密码。
-- $smtp_server：smtp服务器地址。
-- $smtp_port：smtp服务器端口，默认为587，163邮箱需要把端口改为465。
-- $threshold：当电费小于此值时，发送邮件通知。
+- url：默认为西区中湾物业的接口，新北区的接口请查看[这里](https://github.com/moonmagian/BUAA-NewNorthAPI)。
+- student_id：你的学号。
+- receive_email：接受通知的邮箱，支持多个邮箱，邮箱之间用逗号分隔。
+- sender_email：发送邮件的邮箱。
+- password：smtp服务的授权码，不是登录邮箱时的密码。
+- smtp_server：smtp服务器地址。
+- smtp_port：smtp服务器端口，默认为587，163邮箱需要把端口改为465。
+- threshold：当电费小于此值时，发送邮件通知。
 
 ## 自动运行
 该脚本只执行一次查询，要实现定期自动运行，请将脚本添加到Windows的计划任务程序，根据自己的需要选择执行条件，例如每天定时执行或每次启动电脑时自动执行。关于任务计划程序的使用方法可以参考[这里](https://blog.csdn.net/qq_41587516/article/details/112446587)。
