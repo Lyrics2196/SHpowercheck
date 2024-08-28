@@ -9,7 +9,7 @@
 2. 准备一个开启smtp服务的邮箱，记下smtp的服务器和授权码。QQ邮箱的开启方法点[这里](https://zhuanlan.zhihu.com/p/643897161)。163邮箱点[这里](https://blog.csdn.net/liuyuinsdu/article/details/113878840)，注意163邮箱需要把端口改为465。其他邮箱的方法可以参考前两个。
 
 ## 脚本配置
-下载源代码中的powershell脚本或python脚本文件，将文件放在你喜欢的地方。
+下载源代码中的python脚本文件，将文件放在你喜欢的地方。
 
 使用文编编辑器打开再在好的脚本，修改根据自己的情况修改配置。
 - url：默认为西区中湾物业的接口，新北区的接口请查看[这里](https://github.com/moonmagian/BUAA-NewNorthAPI)。
