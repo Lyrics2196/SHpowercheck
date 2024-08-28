@@ -7,16 +7,16 @@ from email.mime.multipart import MIMEMultipart
 
 # 基本信息设置
 url = "https://shgy.buaa.edu.cn/ics/rest/wxdev/getlvalue"  # 查询电量的API链接
-student_id = "xxxxxxxxxxxx"  # 学号
+student_id = ""  # 学号
 receiver_email = [
-    "email1@qq.com",
-    "email2@buaa.edu.cn",
+    "receiver1@example.com",
+    "receiver2@example.com",
 ]  # 收件人邮箱，多个邮箱用列表表示
-sender_email = "xxxxxx"  # 发送通知的邮箱
-password = "xxxxxxxxxxxxxxx"  # 邮箱的SMTP授权码
-smtp_server = "smtp.xx.com"  # SMTP服务器地址
+sender_email = "sender@example.com"  # 发送通知的邮箱
+password = ""  # 邮箱的SMTP授权码
+smtp_server = ""  # SMTP服务器地址
 smtp_port = 587  # SMTP端口，默认587，163邮箱使用465
-threshold = 100  # 电量阈值，低于此值发送警告邮件
+threshold = 10  # 电量阈值，低于此值发送警告邮件
 
 
 # 获取电量信息
