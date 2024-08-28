@@ -2,8 +2,6 @@
 西区宿舍晚上充不了电费，为防止大半夜没电，需要定期查看电费，索性写了个脚本，定期自动查询电费，当余量小于设定值的时候自动发邮件通知。发送的邮件是英文的，因为powershell默认不支持中文。
 灵感来自于[BUAA-NewNorthAPI](https://github.com/moonmagian/BUAA-NewNorthAPI)项目，尝试着抓取了西区的API。
 
-提供了powershell脚本和python脚本，其中powershell脚本因为默认不支持中文，所以采用英文发送邮件。
-
 ## 使用前准备
 1. 确保你在中湾沙河物业的公众号上绑定的你的学号。
 2. 准备一个开启smtp服务的邮箱，记下smtp的服务器和授权码。QQ邮箱的开启方法点[这里](https://zhuanlan.zhihu.com/p/643897161)。163邮箱点[这里](https://blog.csdn.net/liuyuinsdu/article/details/113878840)，注意163邮箱需要把端口改为465。其他邮箱的方法可以参考前两个。
