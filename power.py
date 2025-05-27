@@ -3,6 +3,7 @@ import smtplib
 import logging
 import sys
 import json
+import argparse
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
@@ -14,13 +15,13 @@ def load_config(config_path="config.json"):
     return config
 
 
-# 修改这里，支持通过命令行参数传入 config_path
-if len(sys.argv) > 1:
-    config_path = sys.argv[1]
-else:
-    config_path = "config.json"
+# 命令行参数解析
+parser = argparse.ArgumentParser(description="宿舍电量监控")
+parser.add_argument("-c", "--config", type=str, default="config.json", help="配置文件路径")
+parser.add_argument("-o", "--output", type=str, default="power.log", help="日志文件路径")
+args = parser.parse_args()
 
-config = load_config(config_path)
+config = load_config(args.config)
 
 url = config["url"]  # 查询电量的API链接
 student_id = config["student_id"]  # 学号
@@ -58,10 +59,9 @@ def send_email(balance):
     smtp.quit()
 
 
-if __name__ == "__main__":
-    # 配置日志
+def main():
     logging.basicConfig(
-        filename=sys.path[0] + "\\power.log",
+        filename=args.output,
         level=logging.INFO,
         filemode="a",
         format="%(asctime)s - %(levelname)s - %(message)s",
@@ -72,3 +72,7 @@ if __name__ == "__main__":
         logging.info(f"电量余额{balance}kWh，低于阈值{threshold}kWh，发送警告邮件")
     else:
         logging.info(f"电量余额{balance}kWh，高于阈值{threshold}kWh，无需发送警告邮件")
+
+
+if __name__ == "__main__":
+    main()
