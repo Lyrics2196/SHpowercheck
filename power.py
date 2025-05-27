@@ -14,7 +14,13 @@ def load_config(config_path="config.json"):
     return config
 
 
-config = load_config()
+# 修改这里，支持通过命令行参数传入 config_path
+if len(sys.argv) > 1:
+    config_path = sys.argv[1]
+else:
+    config_path = "config.json"
+
+config = load_config(config_path)
 
 url = config["url"]  # 查询电量的API链接
 student_id = config["student_id"]  # 学号
