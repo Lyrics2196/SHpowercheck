@@ -2,21 +2,28 @@ import requests
 import smtplib
 import logging
 import sys
+import json
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-# 基本信息设置
-url = "https://shgy.buaa.edu.cn/ics/rest/wxdev/getlvalue"  # 查询电量的API链接
-student_id = ""  # 学号
-receiver_email = [
-    "receiver1@example.com",
-    "receiver2@example.com",
-]  # 收件人邮箱，多个邮箱用列表表示
-sender_email = "sender@example.com"  # 发送通知的邮箱
-password = ""  # 邮箱的SMTP授权码
-smtp_server = ""  # SMTP服务器地址
-smtp_port = 587  # SMTP端口，默认587，163邮箱使用465
-threshold = 10  # 电量阈值，低于此值发送警告邮件
+
+# 从外部json读取配置信息
+def load_config(config_path="config.json"):
+    with open(config_path, "r", encoding="utf-8") as f:
+        config = json.load(f)
+    return config
+
+
+config = load_config()
+
+url = config["url"]  # 查询电量的API链接
+student_id = config["student_id"]  # 学号
+receiver_email = config["receiver_email"]  # 收件人邮箱，列表
+sender_email = config["sender_email"]  # 发送通知的邮箱
+password = config["password"]  # 邮箱的SMTP授权码
+smtp_server = config["smtp_server"]  # SMTP服务器地址
+smtp_port = config["smtp_port"]  # SMTP端口
+threshold = config["threshold"]  # 电量阈值
 
 
 # 获取电量信息
